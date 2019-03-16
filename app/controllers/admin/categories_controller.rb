@@ -50,11 +50,10 @@ class Admin::CategoriesController < Admin::BaseController
   def save_category
     if !(@category.save)
       flash[:error] = _('Category could not be saved.')
-      redirect_to :action => 'new' and return
     else
       flash[:notice] = _('Category was successfully saved.')
     end
-   # redirect_to :action => 'new'
+    redirect_to :action => 'new'
   end
 
 end
