@@ -48,6 +48,10 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def save_category
+    # bug fix 2.
+    # There was also the issue when it came to saving a category on the site
+    # The problem was with the code in this function that made incorrect
+    # calls to certain functions causing syntax errors.
     if !(@category.save)
       flash[:notice] = _('Category was successfully saved.')
     else
